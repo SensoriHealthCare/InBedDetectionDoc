@@ -14,7 +14,7 @@
   - ingestor：订阅并写库（测试期）
   - MongoDB & [mongo-express](http://52.184.82.194:8081/db/cfgdb/)（账号：`admin`，密码: `Sensori123#@!`）：仅作观察，不是必须
 - 硬件设备
-  ![image-20251014135056170](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20251014135056170.png)
+  ![image-20251014135056170](.assets/image-20251014135056170.png)
   - 检测模块（设备号: `1742883471`）, 默认配套路由器，也可以手动配置其他路由器（SSID：`Sensoritest`，Password:`12345678`），**WiFi模式选择2.4G**。
   - 电源接口：Type-c类型，要求**输入5v**（建议独立电源供电，不要使用电脑USB口），供电正常后`电源指示灯`会常亮。**通电后设备自动运行**。
   - 复位键：**按下并松开后**系统重启。
@@ -61,16 +61,16 @@ docker compose down
 
 ### A. 客户端软件（[MQTTX](https://mqttx.app/zh/downloads)）
 - 连接52.184.82.194:1883（匿名）
-  ![image-20251014130920340](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20251014130920340.png)
+  ![image-20251014130920340](.assets/image-20251014130920340.png)
 - 订阅 `/sensori/1742883471/current_sta`主题
-  ![image-20251014131022295](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20251014131022295.png)
+  ![image-20251014131022295](.assets/image-20251014131022295.png)
 
 ### B. 命令行（mosquitto_sub）
 ```bash
 mosquitto_sub -h 52.184.82.194 -p 1883 -t "/sensori/1742883471/current_sta" -v
 ```
 
-![image-20251014131457475](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20251014131457475.png)
+![image-20251014131457475](.assets/image-20251014131457475.png)
 
 ### C. Python 订阅脚本
 
@@ -167,11 +167,11 @@ python -m pip install -U paho-mqtt
 python mqtt_subscriber_quick.py --host 52.184.82.194 --port 1883 --topic "/sensori/1742883471/current_sta"
 ```
 
-![image-20251014132220667](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20251014132220667.png)
+![image-20251014132220667](.assets/image-20251014132220667.png)
 
 ### D. 直接登录[mongo-express](http://52.184.82.194:8081/db/cfgdb/)查看
 
-![image-20251014131744186](C:\Users\win10\AppData\Roaming\Typora\typora-user-images\image-20251014131744186.png)
+![image-20251014131744186](.assets/image-20251014131744186.png)
 
 ---
 
