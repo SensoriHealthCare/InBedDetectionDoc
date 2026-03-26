@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-批量导入 Markdown 本地图片到 .assets 目录，并重写链接。
+批量导入 Markdown 本地图片到 assets 目录，并重写链接。
 
 用法示例：
   # 处理指定文件
@@ -10,13 +10,13 @@
   # 递归处理当前目录下所有 .md
   python md_import_assets.py --all
 
-  # 指定资产目录名（默认 .assets）、干跑（只显示不改）
-  python md_import_assets.py --all --assets .assets --dry-run
+  # 指定资产目录名（默认 assets）、干跑（只显示不改）
+  python md_import_assets.py --all --assets assets --dry-run
 
 注意：
 - 只处理本地文件路径（绝对/相对）。跳过 http/https/data: 等外链。
 - 对 <img src="..."> 和 Markdown 语法 ![alt](url "title") 都有效。
-- 每个 Markdown 的图片复制到“该 Markdown 同目录下”的 .assets。
+- 每个 Markdown 的图片复制到“该 Markdown 同目录下”的 assets。
 """
 
 import argparse
@@ -105,7 +105,7 @@ def process_one_md(md_path: Path, assets_name: str, dry_run: bool, verbose: bool
         if src_path is None or not src_path.exists():
             return m.group(0)  # 跳过外链/不存在的
         if assets_name in Path(unquote(url)).parts and (base_dir / unquote(url)).exists():
-            return m.group(0)  # 已在 .assets 内
+            return m.group(0)  # 已在 assets 目录内
         dest_dir = assets_dir
         new_url = url
         try:
@@ -167,10 +167,10 @@ def process_one_md(md_path: Path, assets_name: str, dry_run: bool, verbose: bool
     return changed
 
 def main():
-    ap = argparse.ArgumentParser(description="Import local images in Markdown into .assets and rewrite links.")
+    ap = argparse.ArgumentParser(description="Import local images in Markdown into assets and rewrite links.")
     ap.add_argument("files", nargs="*", help="Markdown files to process (.md)")
     ap.add_argument("--all", action="store_true", help="Recursively process all .md under current directory")
-    ap.add_argument("--assets", default=".assets", help="Assets directory name (default: .assets)")
+    ap.add_argument("--assets", default="assets", help="Assets directory name (default: assets)")
     ap.add_argument("--dry-run", action="store_true", help="Show what would change without writing files")
     ap.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
     args = ap.parse_args()
