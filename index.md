@@ -6,7 +6,7 @@
 ---
 
 ## 1. 模块介绍
-![image-20260326142722651](.assets/image-20260326142722651.png)
+![image-20260326142722651](assets/image-20260326142722651.png)
 
 - **LED指示灯**：
   -  **① 电源指示灯**
@@ -28,7 +28,7 @@
 
 **0）手机上安装 Sensori Pair**
 
-<img src=".assets/image-20260326151020778.png" alt="image-20260326151020778" style="zoom:33%;" />
+<img src="assets/image-20260326151020778.png" alt="image-20260326151020778" style="zoom:33%;" />
 
 ​      目前仅有Android apk安装包。
 
@@ -40,7 +40,7 @@
 
 **3）打开 Sensori Pair**
 
-<img src=".assets/image-20260326151119017.png" alt="image-20260326151119017" style="zoom:28%;" />
+<img src="assets/image-20260326151119017.png" alt="image-20260326151119017" style="zoom:28%;" />
 
 **4）**点击 **开始配网** 按钮
 
@@ -48,29 +48,29 @@
 
 **5）选择app上发现的设备**
 
-<img src=".assets/image-20260326151209160.png" alt="image-20260326151209160" style="zoom:33%;" />
+<img src="assets/image-20260326151209160.png" alt="image-20260326151209160" style="zoom:33%;" />
 
 **6）**输入设备验证 **abcd1234** 
 
-<img src=".assets/image-20260326151437111.png" alt="image-20260326151437111" style="zoom:33%;" />
+<img src="assets/image-20260326151437111.png" alt="image-20260326151437111" style="zoom:33%;" />
 
 **7）选择WiFi并输入密码** 
 
-<img src=".assets/image-20260326151513566.png" alt="image-20260326151513566" style="zoom:33%;" />
+<img src="assets/image-20260326151513566.png" alt="image-20260326151513566" style="zoom:33%;" />
 
-<img src=".assets/image-20260326151532422.png" alt="image-20260326151532422" style="zoom:33%;" />
+<img src="assets/image-20260326151532422.png" alt="image-20260326151532422" style="zoom:33%;" />
 
 **8）配置MQTT服务地址** 
 
-<img src=".assets/image-20260326151637989.png" alt="image-20260326151637989" style="zoom:40%;" />
+<img src="assets/image-20260326151637989.png" alt="image-20260326151637989" style="zoom:40%;" />
 
 **9）点击开始配网** 
 
-<img src=".assets/image-20260326151747567.png" alt="image-20260326151747567" style="zoom:40%;" />
+<img src="assets/image-20260326151747567.png" alt="image-20260326151747567" style="zoom:40%;" />
 
 **10）等待配网流程完成**
 
-<img src=".assets/image-20260326151850178.png" alt="image-20260326151850178" style="zoom:65%;" />
+<img src="assets/image-20260326151850178.png" alt="image-20260326151850178" style="zoom:65%;" />
 
 	- 网络状态指示灯（红灯）慢闪，表示模块已连上WiFi	
 	- MQTT指示灯常亮（淡黄绿灯）常亮，表示模块已建立MQTT连接
@@ -102,9 +102,9 @@ JSON: {"i_mean":1859,"q_mean":1867,"i_p2p":23,"q_p2p":64,"samples":1000,"status"
 
 ### A. 客户端软件（[MQTTX](https://mqttx.app/zh/downloads)）
 - 连接52.184.82.194:1883（匿名）
-  ![image-20251014130920340](.assets/image-20251014130920340.png)
+  ![image-20251014130920340](assets/image-20251014130920340.png)
 - 订阅 `/sensori/B8F862C5E034/vitals`主题
-  <img src=".assets/image-20260309211519965.png" alt="image-20260309211519965" style="zoom: 67%;" />
+  <img src="assets/image-20260309211519965.png" alt="image-20260309211519965" style="zoom: 67%;" />
 
 ---
 
