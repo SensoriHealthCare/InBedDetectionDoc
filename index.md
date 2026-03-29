@@ -115,7 +115,7 @@
 ### A. 客户端软件（[MQTTX](https://mqttx.app/zh/downloads)）
 - 连接52.184.82.194:1883（匿名）
   ![image-20251014130920340](assets/image-20251014130920340.png)
-- 订阅 `/sensori/B8F862C5E034/vitals`主题
+- 订阅 `sensori/B8F862C5E034/vitals`主题
   <img src="assets/image-20260309211519965.png" alt="image-20260309211519965" style="zoom: 67%;" />
 
 ---
